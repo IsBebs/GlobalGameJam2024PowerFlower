@@ -23,7 +23,7 @@ public class ShootController : MonoBehaviour
 
     public void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("PlayerSprite");
     }
 
     public void CreateShootSound()
