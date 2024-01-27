@@ -6,9 +6,15 @@ public class AnimationEventStuff : MonoBehaviour
 {
     [SerializeField] Animator animator;
 
-    public void trigger(string variableName)
+    public void triggerValue(string variableName)
     {
         animator.SetTrigger(variableName);
+    }
+
+    public void speedValue(string variableName, float speedValue)
+    {
+        animator.SetFloat(variableName, speedValue);
+        
     }
     
 }
