@@ -11,8 +11,4 @@ public class KingCharacter : MonoBehaviour, IDamage
     {
         SceneManager.LoadScene(sceneBuildIndex);
     }
-
-    
-
-    
 }
