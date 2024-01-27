@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    private bool _alerted;
+    protected bool _isAlerted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,5 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
-    }
-
-    protected virtual void WhenAlerted()
-    {
-       
     }
 }

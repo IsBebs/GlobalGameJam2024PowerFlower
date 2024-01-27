@@ -5,9 +5,18 @@ using UnityEngine;
 public class MeleeEnemey : Enemy, IEnemy
 {
     [SerializeField] GameObject startLook;
+    [SerializeField]
+    float force;
+    [SerializeField]
+    Rigidbody2D rigidbody2D;
+
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        _isAlerted = true;
+        player = GameObject.FindWithTag("Player");
+
         Vector3 startLookPos = startLook.transform.position;
         Vector2 lookDirection = transform.position - startLookPos;
         float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
@@ -16,7 +25,7 @@ public class MeleeEnemey : Enemy, IEnemy
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Alerted();
     }
@@ -24,10 +33,17 @@ public class MeleeEnemey : Enemy, IEnemy
 
     public void Alerted()
     {
-        Vector3 playerPos = GameObject.FindWithTag("player").transform.position;
-        Vector2 lookDirection = transform.position - playerPos;
+        
+        Vector3 playerPos = player.transform.position;
+        Vector2 lookDirection = playerPos - transform.position;
         float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
         float angle = angleRad * (180 / Mathf.PI);
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
     }
+
+  
+
+  
 }
