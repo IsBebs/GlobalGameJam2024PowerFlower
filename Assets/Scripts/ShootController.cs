@@ -77,9 +77,9 @@ public class ShootController : MonoBehaviour
 
                     if (playerAmmo.ConfettiAmmo > 0)
                     {
+                        player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
                         ShootBullet(ConfetiGunBulletPool);
                         playerAmmo.UseConfettiAmmo();
-                        player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
                         Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
                     }
                     
@@ -89,9 +89,9 @@ public class ShootController : MonoBehaviour
 
                     if (playerAmmo.PieAmmo > 0)
                     {
+                        player.GetComponent<Animator>().SetTrigger("PieShoot");
                         ShootBullet(PieBulletPool);
                         playerAmmo.UsePieAmmo();
-                        player.GetComponent<Animator>().SetTrigger("PieShoot");
                         Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
                     }
                     break;
