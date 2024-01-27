@@ -30,4 +30,6 @@ public class Bullet : MonoBehaviour, IBullet
         gameObject.SetActive(false);
     }
 
+
+
 }
