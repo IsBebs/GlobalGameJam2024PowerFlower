@@ -10,7 +10,6 @@ public class RangeEnemy : Enemy, IEnemy
     LayerMask layerMask;
     private float _timer;
     // Start is called before the first frame update
-    [SerializeField]
     BulletPool bulletPool;
     [SerializeReference]
     float distance;
