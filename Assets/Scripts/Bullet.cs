@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IBullet
 {
 
     [SerializeField]
@@ -10,9 +10,11 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     Rigidbody2D rigidbody2D;
 
-    public void SetDirection(Vector2 newDirection)
+
+    public void SetNewBulletValues(Vector2 newDirection, Vector3 position)
     {
         rigidbody2D.velocity = newDirection * speed;
+        transform.position = position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

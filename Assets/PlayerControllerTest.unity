@@ -141,9 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
-  bulletPrefab: {fileID: 8708163277436223830, guid: 12842f8e6e34293478b5c400c84e68d9, type: 3}
-  bulletPoolSize: 1000
-  bulletPoolParent: {fileID: 514317638}
+  normalBulletPool: {fileID: 514317639}
 --- !u!1 &132032215 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
@@ -174,6 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 514317638}
+  - component: {fileID: 514317639}
   m_Layer: 0
   m_Name: BulletPoolParent
   m_TagString: Untagged
@@ -196,6 +195,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514317639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514317637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a6186ba391bf4db5e1d2dc9f53769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8708163277436223830, guid: 12842f8e6e34293478b5c400c84e68d9, type: 3}
+  bulletPoolSize: 100
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
