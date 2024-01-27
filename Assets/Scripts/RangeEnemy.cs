@@ -60,10 +60,14 @@ public class RangeEnemy : Enemy, IEnemy
         Vector2 direction = player.transform.position - gameObject.transform.position;
 
         RaycastHit2D hit =  Physics2D.Raycast(gameObject.transform.position, direction, distance, layerMask);
-        if (hit.collider.gameObject.CompareTag("Player"))
+        if (hit.collider != null)
         {
-            Alerted();
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                Alerted();
+            }
         }
+    
 
     }
 

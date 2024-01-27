@@ -32,7 +32,11 @@ public class MeleeEnemey : Enemy, IEnemy
     public void Update()
     {
         _currentTime -= Time.deltaTime;
+    }
 
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         if (_isAlerted)
         {
             Vector3 playerPos = player.transform.position;
@@ -43,19 +47,18 @@ public class MeleeEnemey : Enemy, IEnemy
 
             rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
         }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
 
         Vector2 direction = player.transform.position - gameObject.transform.position;
 
         RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, direction, distance, layerMask);
-        if (hit.collider.gameObject.CompareTag("Player"))
+        if (hit.collider != null)
         {
-            Alerted();
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                Alerted();
+            }
         }
+      
     }
 
     public void Alerted()
