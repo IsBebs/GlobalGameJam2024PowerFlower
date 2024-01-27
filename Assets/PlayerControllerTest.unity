@@ -867,29 +867,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: PieMaxAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: PieBulletPool
       value: 
       objectReference: {fileID: 514317639}
-    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: ConfetiMaxAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: normalBulletPool
-      value: 
-      objectReference: {fileID: 190500657}
     - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: ConfetiGunBulletPool
       value: 
       objectReference: {fileID: 190500657}
     - target: {fileID: 1427830010891760809, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
+      propertyPath: HpUI
+      value: 
+      objectReference: {fileID: 1766456061}
     - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_Name
       value: Player
@@ -942,6 +930,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5160828878250601817, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+      propertyPath: AmmoUI
+      value: 
+      objectReference: {fileID: 275986864}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
 --- !u!1001 &5700646163350389658
