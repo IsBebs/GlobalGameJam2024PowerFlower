@@ -79,7 +79,7 @@ public class ShootController : MonoBehaviour
                     {
                         ShootBullet(ConfetiGunBulletPool);
                         playerAmmo.UseConfettiAmmo();
-                        player.GetComponent<AnimationEventStuff>().triggerValue("ConfettiShoot");
+                        player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
                         Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
                     }
                     
@@ -91,7 +91,7 @@ public class ShootController : MonoBehaviour
                     {
                         ShootBullet(PieBulletPool);
                         playerAmmo.UsePieAmmo();
-                        player.GetComponent<AnimationEventStuff>().triggerValue("PieShoot");
+                        player.GetComponent<Animator>().SetTrigger("PieShoot");
                         Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
                     }
                     break;
