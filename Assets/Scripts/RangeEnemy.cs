@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeEnemy : Enemy, IEnemy, IDamage
+public class RangeEnemy : Enemy, IEnemy
 {
-    [SerializeField] GameObject startLook;
     [SerializeField] float minTime;
     [SerializeField] float maxTime;
 
     private float _timer;
     // Start is called before the first frame update
-
+    [SerializeField]
     BulletPool bulletPool;
-    GameObject playerObject;
+
+    
     void Start()
     {
         GameObject bulletPoolObject = GameObject.FindWithTag("StandingBulletPool");
@@ -46,15 +46,17 @@ public class RangeEnemy : Enemy, IEnemy, IDamage
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
-           
+            _timer = Random.Range(minTime, maxTime);
+
+            lookDirection = playerPos - transform.position;
             IBullet bulletInterface = bulletPool.GetNextBulletInPool().GetComponent<IBullet>();
             bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
-            _timer = 1;
+            Debug.Log("Fire");
         }
     }
 
-    public void Damage(int damage)
-    {
-        Debug.Log("Träff2");
-    }
+    
+
+
+
 }

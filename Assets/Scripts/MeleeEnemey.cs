@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemey : Enemy, IEnemy, IDamage
+public class MeleeEnemey : Enemy, IEnemy
 {
-    [SerializeField] GameObject startLook;
-    [SerializeField]
-    float force;
+    
+    
     [SerializeField]
     Rigidbody2D rigidbody2D;
 
@@ -28,7 +27,6 @@ public class MeleeEnemey : Enemy, IEnemy, IDamage
         Alerted();
     }
 
-
     public void Alerted()
     {
         
@@ -39,10 +37,5 @@ public class MeleeEnemey : Enemy, IEnemy, IDamage
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
-    }
-
-    public void Damage(int damage)
-    {
-        Debug.Log("Träff");
     }
 }
