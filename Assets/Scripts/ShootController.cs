@@ -21,13 +21,17 @@ public class ShootController : MonoBehaviour
     enum Weapons {ConfettiGun,Pie }
 
 
-    public void CreateSound()
+    public void CreateShootSound()
     {
       Collider2D [] colliders =  Physics2D.OverlapCircleAll(transform.position, soundRadius, layerMask);
         for (int i = 0; i < colliders.Length; i++)
         {
             GameObject colliderObject = colliders[i].gameObject;
-            Debug.Log(colliderObject);
+            IEnemy enemyInterface = colliderObject.gameObject.GetComponent<IEnemy>();
+            if(enemyInterface != null)
+            {
+                enemyInterface.Alerted();
+            }
         }
     }
 
@@ -106,6 +110,7 @@ public class ShootController : MonoBehaviour
             GameObject bulletObject = bulletPool.GetNextBulletInPool();
             IBullet bulletInterface = bulletObject.GetComponent<IBullet>();
             bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
+            CreateShootSound();
         }
 
     }
