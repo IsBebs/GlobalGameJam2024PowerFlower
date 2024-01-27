@@ -17,9 +17,14 @@ public class ShootController : MonoBehaviour
     float soundRadius;
     [SerializeField]
     LayerMask layerMask;
+    GameObject player;
 
     enum Weapons {ConfettiGun,Pie }
 
+    public void Awake()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     public void CreateShootSound()
     {
@@ -74,6 +79,7 @@ public class ShootController : MonoBehaviour
                     {
                         ShootBullet(ConfetiGunBulletPool);
                         playerAmmo.UseConfettiAmmo();
+                        player.GetComponent<AnimationEventStuff>().triggerValue("ConfettiShoot");
                         Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
                     }
                     
@@ -85,6 +91,7 @@ public class ShootController : MonoBehaviour
                     {
                         ShootBullet(PieBulletPool);
                         playerAmmo.UsePieAmmo();
+                        player.GetComponent<AnimationEventStuff>().triggerValue("PieShoot");
                         Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
                     }
                     break;
