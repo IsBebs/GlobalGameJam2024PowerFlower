@@ -13,8 +13,27 @@ public class ShootController : MonoBehaviour
     [SerializeField]
     PlayerAmmo playerAmmo;
     Weapons currentWeapons = Weapons.Pie;
+    [SerializeField]
+    float soundRadius;
+    [SerializeField]
+    LayerMask layerMask;
+
     enum Weapons {ConfettiGun,Pie }
 
+
+    public void CreateShootSound()
+    {
+      Collider2D [] colliders =  Physics2D.OverlapCircleAll(transform.position, soundRadius, layerMask);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            GameObject colliderObject = colliders[i].gameObject;
+            IEnemy enemyInterface = colliderObject.gameObject.GetComponent<IEnemy>();
+            if(enemyInterface != null)
+            {
+                enemyInterface.Alerted();
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -91,6 +110,8 @@ public class ShootController : MonoBehaviour
             GameObject bulletObject = bulletPool.GetNextBulletInPool();
             IBullet bulletInterface = bulletObject.GetComponent<IBullet>();
             bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
+            CreateShootSound();
         }
+
     }
 }
