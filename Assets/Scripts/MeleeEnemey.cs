@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemey : Enemy, IEnemy
+public class MeleeEnemey : Enemy, IEnemy, IDamage
 {
     [SerializeField] GameObject startLook;
     [SerializeField]
@@ -10,12 +10,10 @@ public class MeleeEnemey : Enemy, IEnemy
     [SerializeField]
     Rigidbody2D rigidbody2D;
 
-    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         _isAlerted = true;
-        player = GameObject.FindWithTag("Player");
 
         Vector3 startLookPos = startLook.transform.position;
         Vector2 lookDirection = transform.position - startLookPos;
@@ -43,7 +41,8 @@ public class MeleeEnemey : Enemy, IEnemy
         rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
     }
 
-  
-
-  
+    public void Damage(int damage)
+    {
+        Debug.Log("Träff");
+    }
 }

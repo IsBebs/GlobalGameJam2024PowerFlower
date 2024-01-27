@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeEnemy : Enemy, IEnemy
+public class RangeEnemy : Enemy, IEnemy, IDamage
 {
     [SerializeField] GameObject startLook;
     [SerializeField] float minTime;
@@ -11,8 +11,12 @@ public class RangeEnemy : Enemy, IEnemy
     private float _timer;
     // Start is called before the first frame update
 
+    BulletPool bulletPool;
+    GameObject playerObject;
     void Start()
     {
+        GameObject bulletPoolObject = GameObject.FindWithTag("StandingBulletPool");
+        bulletPool = bulletPoolObject.GetComponent<BulletPool>();
         _timer = Random.Range(minTime,maxTime);
 
         Vector3 startLookPos = startLook.transform.position;
@@ -32,7 +36,7 @@ public class RangeEnemy : Enemy, IEnemy
     {
         _isAlerted = true;
 
-        Vector3 playerPos = GameObject.FindWithTag("Player").transform.position;
+        Vector3 playerPos = player.transform.position;
         Vector2 lookDirection = transform.position - playerPos;
         float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
         float angle = angleRad * (180 / Mathf.PI);
@@ -42,8 +46,15 @@ public class RangeEnemy : Enemy, IEnemy
         _timer -= Time.deltaTime;
         if (_timer <= 0)
         {
-            Debug.Log("Fire");
+           
+            IBullet bulletInterface = bulletPool.GetNextBulletInPool().GetComponent<IBullet>();
+            bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
             _timer = 1;
         }
+    }
+
+    public void Damage(int damage)
+    {
+        Debug.Log("Träff2");
     }
 }

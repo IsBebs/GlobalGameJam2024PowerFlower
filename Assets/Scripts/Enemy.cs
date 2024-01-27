@@ -6,15 +6,12 @@ public class Enemy : MonoBehaviour
 {
 
     protected bool _isAlerted = false;
-    // Start is called before the first frame update
-    void Start()
+
+    protected GameObject player;
+
+    public void Awake()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
