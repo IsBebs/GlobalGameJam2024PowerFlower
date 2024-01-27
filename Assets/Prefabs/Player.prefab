@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3707562897278367247}
   - component: {fileID: 3707562897278367240}
   - component: {fileID: 132032221}
+  - component: {fileID: 1427830010891760809}
+  - component: {fileID: 5160828878250601817}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -139,6 +141,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1427830010891760809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707562897278367236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd80538fc76ff0149890fd1c9d414aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &5160828878250601817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707562897278367236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7ba39ab9e5a1e47a925130408e5d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfetiMaxAmmo: 10
+  PieMaxAmmo: 10
 --- !u!1 &3707562897338330973
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,4 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
-  normalBulletPool: {fileID: 0}
+  PieBulletPool: {fileID: 0}
+  ConfetiGunBulletPool: {fileID: 0}
+  playerAmmo: {fileID: 5160828878250601817}

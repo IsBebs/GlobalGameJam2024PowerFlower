@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4677748126431342047}
   - component: {fileID: 6276784374116203307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6598297836924475094}
   - component: {fileID: 8716263135847242877}
   - component: {fileID: 8656502934232141945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
