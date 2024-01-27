@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ClownConfettiShoot
+  m_Name: ClownConfettiShootWalk
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,6 +18,19 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 314148606, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
+    - time: 0.083333336
+      value: {fileID: 1892270108, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
+    - time: 0.16666667
+      value: {fileID: 947796434, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
+    - time: 0.25
+      value: {fileID: -1043421192, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
+    attribute: m_Sprite
+    path: ClownBodyWalking-Sheet_1
+    classID: 212
+    script: {fileID: 0}
   - curve:
     - time: 0
       value: {fileID: -946689300, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
@@ -33,22 +46,15 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
+      value: {fileID: 1589116658, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - time: 0.083333336
       value: {fileID: -1112052154, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - time: 0.16666667
+      value: {fileID: 1157669875, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - time: 0.25
+      value: {fileID: 347890728, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
     attribute: m_Sprite
     path: ClownLegsWalking-Sheet_0
-    classID: 212
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 314148606, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
-    - time: 0.083333336
-      value: {fileID: 1892270108, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
-    - time: 0.16666667
-      value: {fileID: 947796434, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
-    - time: 0.25
-      value: {fileID: -1043421192, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
-    attribute: m_Sprite
-    path: ClownBodyWalking-Sheet_1
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 12
@@ -58,6 +64,13 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
+    - serializedVersion: 2
+      path: 4196197016
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     - serializedVersion: 2
       path: 4182285502
       attribute: 0
@@ -72,23 +85,19 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 4196197016
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -946689300, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
-    - {fileID: -586268688, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
-    - {fileID: -794020663, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
-    - {fileID: -140874259, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
-    - {fileID: -1112052154, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
     - {fileID: 314148606, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
     - {fileID: 1892270108, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
     - {fileID: 947796434, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
     - {fileID: -1043421192, guid: 89baed4e69ec4004e9705133e98c1463, type: 3}
+    - {fileID: -946689300, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
+    - {fileID: -586268688, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
+    - {fileID: -794020663, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
+    - {fileID: -140874259, guid: 48453ddcf37df1041b1b519507761dad, type: 3}
+    - {fileID: 1589116658, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - {fileID: -1112052154, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - {fileID: 1157669875, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
+    - {fileID: 347890728, guid: 0e7fac2f08bd758439a05ccfa740d7cd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
