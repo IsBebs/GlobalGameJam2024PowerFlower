@@ -294,27 +294,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &727449529 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-  m_PrefabInstance: {fileID: 791016167}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &727449534
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727449529}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &729495517
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +469,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 771653868}
+    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+      propertyPath: normalBulletPool
+      value: 
+      objectReference: {fileID: 1214399712}
     - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -548,6 +535,52 @@ PrefabInstance:
       objectReference: {fileID: 771653868}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+--- !u!1 &1214399711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214399713}
+  - component: {fileID: 1214399712}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214399712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214399711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a6186ba391bf4db5e1d2dc9f53769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8708163277436223830, guid: 12842f8e6e34293478b5c400c84e68d9, type: 3}
+  bulletPoolSize: 5
+--- !u!4 &1214399713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214399711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2048836, y: 3.3315494, z: 0.056278788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141531025
 GameObject:
   m_ObjectHideFlags: 0
