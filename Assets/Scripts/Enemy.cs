@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour, IDamage
     protected GameObject deadPreFab;
     [SerializeField]protected float force;
     [SerializeField]protected GameObject startLook;
+    [SerializeField] protected int damage;
 
     public void Awake()
     {
@@ -37,4 +38,9 @@ public class Enemy : MonoBehaviour, IDamage
             Dead();
         }
     }
+
+  
+
+
+
 }

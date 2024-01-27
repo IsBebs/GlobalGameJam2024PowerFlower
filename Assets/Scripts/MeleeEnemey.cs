@@ -13,7 +13,6 @@ public class MeleeEnemey : Enemy, IEnemy
     void Start()
     {
         _isAlerted = true;
-
         Vector3 startLookPos = startLook.transform.position;
         Vector2 lookDirection = transform.position - startLookPos;
         float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
@@ -38,4 +37,15 @@ public class MeleeEnemey : Enemy, IEnemy
 
         rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log("Krock");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Krock1");
+            player.GetComponent<IDamage>().Damage(damage);
+        }
+    }
+
 }
