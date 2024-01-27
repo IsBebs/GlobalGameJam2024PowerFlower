@@ -123,48 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &53198734 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3707562897338330973, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-  m_PrefabInstance: {fileID: 3707562897324331219}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &53198738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53198734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f1df912a7871c44b0743cc8e18d382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 519420031}
-  bulletPrefab: {fileID: 8708163277436223830, guid: 12842f8e6e34293478b5c400c84e68d9, type: 3}
-  bulletPoolSize: 1000
-  bulletPoolParent: {fileID: 514317638}
---- !u!1 &132032215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-  m_PrefabInstance: {fileID: 3707562897324331219}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &132032221
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132032215}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &514317637
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 514317638}
+  - component: {fileID: 514317639}
   m_Layer: 0
   m_Name: BulletPoolParent
   m_TagString: Untagged
@@ -196,6 +155,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514317639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514317637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a6186ba391bf4db5e1d2dc9f53769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8708163277436223830, guid: 12842f8e6e34293478b5c400c84e68d9, type: 3}
+  bulletPoolSize: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,13 +260,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
+      propertyPath: normalBulletPool
+      value: 
+      objectReference: {fileID: 514317639}
     - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3707562897278367241, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_RootOrder
@@ -343,9 +320,5 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 3707562897338330973, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
