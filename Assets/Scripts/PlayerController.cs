@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
         {
             player.GetComponent<Animator>().SetFloat("Speed", force * Time.fixedDeltaTime);
         }
+        else
+        {
+            player.GetComponent<Animator>().SetFloat("Speed", 0);
+        }
         rigidbody2D.AddForce(newVelocity.normalized * force * Time.fixedDeltaTime);
 
     }
