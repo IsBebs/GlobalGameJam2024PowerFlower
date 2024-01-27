@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour, IBullet
     float speed;
     [SerializeField]
     Rigidbody2D rigidbody2D;
+    [SerializeField]
+    int Damage;
 
 
     public void SetNewBulletValues(Vector2 newDirection, Vector3 position)
@@ -19,6 +21,12 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject colliderObject = collision.gameObject;
+        IDamage damageInterface = colliderObject.GetComponent<IDamage>();
+        if (damageInterface != null)
+        {
+            damageInterface.Damage(Damage);
+        }
         gameObject.SetActive(false);
     }
 
