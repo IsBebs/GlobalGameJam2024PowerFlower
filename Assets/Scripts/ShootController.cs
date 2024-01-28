@@ -78,55 +78,38 @@ public class ShootController : MonoBehaviour
             if (playerAmmo.ConfettiAmmo > 0)
             {
                 player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
-                fireAnimation = AnimationStates.activeConfetti;
             }
             else if (playerAmmo.PieAmmo > 0)
             {
                 player.GetComponent<Animator>().SetTrigger("PieShoot");
-                fireAnimation = AnimationStates.activePie;
             }
         }
+    }
 
-        if (animationController.AnimationDone)
-        {
-            if (fireAnimation == AnimationStates.activeConfetti)
-            {
-                fireAnimation = AnimationStates.doneConfetti;
-                animationController.AnimationDone = false;
-            }
-            else if (fireAnimation == AnimationStates.activePie)
-            {
-                fireAnimation = AnimationStates.donePie;
-                animationController.AnimationDone = false;
-            }
-        }
+    public void ShootPie()
+    {
+        ShootBullet(PieBulletPool);
+        playerAmmo.UsePieAmmo();
+        Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
+        playerAmmo.UpdateAmmoUiWithPieAmmo();
+    }
 
-        if (fireAnimation == AnimationStates.donePie)
-        {
-            ShootBullet(PieBulletPool);
-            playerAmmo.UsePieAmmo();
-            Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
-            fireAnimation = AnimationStates.inactive;
+    public void ShootConfeti()
+    {
+        ShootBullet(ConfetiGunBulletPool);
+        playerAmmo.UseConfettiAmmo();
+        Debug.Log($"Confetti Ammo{playerAmmo.ConfettiAmmo}");
 
-            playerAmmo.UpdateAmmoUiWithPieAmmo();
-        }
-        else if (fireAnimation == AnimationStates.doneConfetti)
-        {
-            ShootBullet(ConfetiGunBulletPool);
-            playerAmmo.UseConfettiAmmo();
-            Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
+        playerAmmo.UpdateAmmoUiWithConfettiAmmo();
+    }
 
-            playerAmmo.UpdateAmmoUiWithConfettiAmmo();
-        }
-
-        void ShootBullet(BulletPool bulletPool)
-        {
-            Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 lookDirection = mousePos - transform.position;
-            GameObject bulletObject = bulletPool.GetNextBulletInPool();
-            IBullet bulletInterface = bulletObject.GetComponent<IBullet>();
-            bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
-            CreateShootSound();
-        }
+    void ShootBullet(BulletPool bulletPool)
+    {
+        Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 lookDirection = mousePos - transform.position;
+        GameObject bulletObject = bulletPool.GetNextBulletInPool();
+        IBullet bulletInterface = bulletObject.GetComponent<IBullet>();
+        bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
+        CreateShootSound();
     }
 }
