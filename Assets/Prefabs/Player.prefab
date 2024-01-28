@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072d39ac1d592b64ca24dbbfc048a808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 1710112936}
 --- !u!114 &53198738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f1df912a7871c44b0743cc8e18d382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 1710112936}
   PieBulletPool: {fileID: 0}
   ConfetiGunBulletPool: {fileID: 0}
   playerAmmo: {fileID: 5160828878250601817}

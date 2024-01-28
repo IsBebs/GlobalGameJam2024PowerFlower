@@ -6,7 +6,7 @@ public class AnimationController : MonoBehaviour
 {
     public bool AnimationDone { get; set; }
 
-    public void playerShootAnimationDone()
+    public void PlayerShootAnimationDone()
     {
         AnimationDone = true;
     }
