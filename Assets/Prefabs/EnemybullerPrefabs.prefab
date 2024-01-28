@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rigidbody2D: {fileID: 8708163277436223831}
-  Damage: 2
+  Damage: 10
   soundName: 
 --- !u!50 &8708163277436223831
 Rigidbody2D:
