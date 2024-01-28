@@ -19,11 +19,9 @@ public class ShootController : MonoBehaviour
     LayerMask layerMask;
     [SerializeField]
     AnimationController animationController;
-
+    bool IsPlayingAnimation = false;
     //Mostly for animation
     GameObject player;
-    AnimationStates fireAnimation = AnimationStates.inactive;
-    enum AnimationStates { inactive, activePie, activeConfetti, donePie, doneConfetti}
     enum Weapons {ConfettiGun,Pie }
 
     public void Awake()
@@ -73,16 +71,20 @@ public class ShootController : MonoBehaviour
             playerAmmo.UpdateAmmoUiWithConfettiAmmo();
         }
 
-        if (Input.GetMouseButtonDown(0) && fireAnimation == AnimationStates.inactive)
+        if (Input.GetMouseButtonDown(0) && !IsPlayingAnimation)
         {
             if (playerAmmo.ConfettiAmmo > 0)
             {
                 player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
+                IsPlayingAnimation = true;
+
             }
             else if (playerAmmo.PieAmmo > 0)
             {
                 player.GetComponent<Animator>().SetTrigger("PieShoot");
+                IsPlayingAnimation = true;
             }
+            
         }
     }
 
@@ -92,6 +94,7 @@ public class ShootController : MonoBehaviour
         playerAmmo.UsePieAmmo();
         Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
         playerAmmo.UpdateAmmoUiWithPieAmmo();
+        IsPlayingAnimation = false;
     }
 
     public void ShootConfeti()
@@ -99,7 +102,7 @@ public class ShootController : MonoBehaviour
         ShootBullet(ConfetiGunBulletPool);
         playerAmmo.UseConfettiAmmo();
         Debug.Log($"Confetti Ammo{playerAmmo.ConfettiAmmo}");
-
+        IsPlayingAnimation  = false;
         playerAmmo.UpdateAmmoUiWithConfettiAmmo();
     }
 
