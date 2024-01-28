@@ -329,7 +329,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &784512970
 PrefabInstance:
@@ -397,7 +397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9121988696695397534, guid: 0a52e65ae7874bc4daf23cd0afe86ded, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9121988696695397534, guid: 0a52e65ae7874bc4daf23cd0afe86ded, type: 3}
       propertyPath: m_LocalPosition.x
@@ -456,63 +456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1578343224
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.96035916
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2787658
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202434, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -32.373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1888047259035202438, guid: b71eb0297126249418763db64bc650c9, type: 3}
-      propertyPath: m_Name
-      value: ConfetiAmmo
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b71eb0297126249418763db64bc650c9, type: 3}
 --- !u!114 &1842786177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7162372940519160668, guid: 29828f0b9fdb7a9488508818be07cd0f, type: 3}
@@ -675,7 +618,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2096004422
 PrefabInstance:
