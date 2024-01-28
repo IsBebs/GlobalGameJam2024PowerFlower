@@ -17,8 +17,12 @@ public class ShootController : MonoBehaviour
     float soundRadius;
     [SerializeField]
     LayerMask layerMask;
-    GameObject player;
 
+    //Mostly for animation
+    GameObject player;
+    public bool animationDone;
+    AnimationStates fireAnimation = AnimationStates.inactive;
+    enum AnimationStates { inactive, activePie, activeConfetti, donePie, doneConfetti}
     enum Weapons {ConfettiGun,Pie }
 
     public void Awake()
@@ -68,47 +72,51 @@ public class ShootController : MonoBehaviour
             playerAmmo.UpdateAmmoUiWithConfettiAmmo();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && fireAnimation == AnimationStates.inactive)
         {
-
-            switch (currentWeapons)
+            if (playerAmmo.ConfettiAmmo > 0)
             {
-                case Weapons.ConfettiGun:
-
-                    if (playerAmmo.ConfettiAmmo > 0)
-                    {
-                        player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
-                        ShootBullet(ConfetiGunBulletPool);
-                        playerAmmo.UseConfettiAmmo();
-                        Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
-                    }
-                    
-                    break;
-
-                case Weapons.Pie:
-
-                    if (playerAmmo.PieAmmo > 0)
-                    {
-                        player.GetComponent<Animator>().SetTrigger("PieShoot");
-                        ShootBullet(PieBulletPool);
-                        playerAmmo.UsePieAmmo();
-                        Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
-                    }
-                    break;
+                player.GetComponent<Animator>().SetTrigger("ConfettiShoot");
+                fireAnimation = AnimationStates.activeConfetti;
             }
-
-            switch (currentWeapons)
+            else if (playerAmmo.PieAmmo > 0)
             {
-                case Weapons.ConfettiGun:
-                    playerAmmo.UpdateAmmoUiWithConfettiAmmo();
-                    break;
-
-                case Weapons.Pie:
-                    playerAmmo.UpdateAmmoUiWithPieAmmo();
-                    break;
+                player.GetComponent<Animator>().SetTrigger("PieShoot");
+                fireAnimation = AnimationStates.activePie;
             }
         }
 
+        if (animationDone)
+        {
+            if (fireAnimation == AnimationStates.activeConfetti)
+            {
+                fireAnimation = AnimationStates.doneConfetti;
+                animationDone = false;
+            }
+            else if (fireAnimation == AnimationStates.activePie)
+            {
+                fireAnimation = AnimationStates.donePie;
+                animationDone = false;
+            }
+        }
+
+        if (fireAnimation == AnimationStates.donePie)
+        {
+            ShootBullet(PieBulletPool);
+            playerAmmo.UsePieAmmo();
+            Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
+            fireAnimation = AnimationStates.inactive;
+
+            playerAmmo.UpdateAmmoUiWithPieAmmo();
+        }
+        else if (fireAnimation == AnimationStates.doneConfetti)
+        {
+            ShootBullet(ConfetiGunBulletPool);
+            playerAmmo.UseConfettiAmmo();
+            Debug.Log($"Confeti Ammo{playerAmmo.ConfettiAmmo}");
+
+            playerAmmo.UpdateAmmoUiWithConfettiAmmo();
+        }
 
         void ShootBullet(BulletPool bulletPool)
         {
