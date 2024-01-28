@@ -23,6 +23,8 @@ public class ShootController : MonoBehaviour
     //Mostly for animation
     GameObject player;
     enum Weapons {ConfettiGun,Pie }
+    [SerializeField]
+    string PieThrowSoundName;
 
     public void Awake()
     {
@@ -95,6 +97,7 @@ public class ShootController : MonoBehaviour
         Debug.Log($"Pie Ammo{playerAmmo.PieAmmo}");
         playerAmmo.UpdateAmmoUiWithPieAmmo();
         IsPlayingAnimation = false;
+        SoundManager.Instance.PlaySound(PieThrowSoundName);
     }
 
     public void ShootConfeti()

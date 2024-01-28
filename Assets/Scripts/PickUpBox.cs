@@ -9,6 +9,8 @@ public class PickUpBox : MonoBehaviour
     int PickUpAmmount;
     [SerializeField]
     PickupType pickupType = PickupType.Confeti;
+    [SerializeField]
+    string pickupSoundName;
     enum PickupType {Pie,Confeti,Health }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +33,9 @@ public class PickUpBox : MonoBehaviour
                     playerAmmo.AddPieAmmo(PickUpAmmount);
                     break;
             }
+            SoundManager.Instance.PlaySound(pickupSoundName);
             Destroy(this.gameObject);
+
         }
     }
 

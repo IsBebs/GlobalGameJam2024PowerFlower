@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 10
   rigidbody2D: {fileID: 8708163277436223831}
   Damage: 1
+  soundName: PieImpact
 --- !u!50 &8708163277436223831
 Rigidbody2D:
   serializedVersion: 4
