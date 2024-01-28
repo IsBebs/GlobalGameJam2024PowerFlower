@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public void playershootAnimationDone(ShootController shoot)
+    public bool AnimationDone { get; set; }
+
+    public void playerShootAnimationDone()
     {
-        shoot.animationDone = true;
+        AnimationDone = true;
     }
 }
