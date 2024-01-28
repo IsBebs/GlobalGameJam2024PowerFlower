@@ -182,10 +182,6 @@ PrefabInstance:
       propertyPath: startLook
       value: 
       objectReference: {fileID: 1135191479}
-    - target: {fileID: 4572122514391096001, guid: 4aa26b1722513db45ad9f3c413f24825, type: 3}
-      propertyPath: deadPreFab
-      value: 
-      objectReference: {fileID: 5147807683454556890, guid: 4226ba50b599d2f46a007222396fe215, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa26b1722513db45ad9f3c413f24825, type: 3}
 --- !u!1001 &706848790
@@ -893,17 +889,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2807739911068728218, guid: 66494bf5c9bf5cc498fb3180d77841e5, type: 3}
-      propertyPath: distance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2807739911068728218, guid: 66494bf5c9bf5cc498fb3180d77841e5, type: 3}
       propertyPath: startLook
       value: 
       objectReference: {fileID: 1135191479}
-    - target: {fileID: 8790070194318160408, guid: 66494bf5c9bf5cc498fb3180d77841e5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8790070194318160409, guid: 66494bf5c9bf5cc498fb3180d77841e5, type: 3}
       propertyPath: m_RootOrder
       value: 7

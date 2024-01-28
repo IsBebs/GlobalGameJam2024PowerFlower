@@ -46,6 +46,9 @@ public class MeleeEnemey : Enemy, IEnemy
             transform.rotation = Quaternion.Euler(0, 0, 180+angle);
 
             rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
+
+            //testa här
+
         }
 
         Vector2 direction = player.transform.position - gameObject.transform.position;

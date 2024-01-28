@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  deadPreFab: {fileID: 2773418438759447260, guid: 24a6d3d9516e85a4e95c28e2548183ee, type: 3}
+  deadPreFab: {fileID: 5147807683454556890, guid: 4226ba50b599d2f46a007222396fe215, type: 3}
   force: 0
   startLook: {fileID: 0}
   damage: 2
