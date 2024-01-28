@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour, IDamage
     int maxHealth;
     [SerializeField]
     TextMeshProUGUI HpUI;
+    [SerializeField]
+    int gameOverBuildIndex = 0;
 
     public void Damage(int damage)
     {
@@ -23,7 +25,7 @@ public class PlayerHealth : MonoBehaviour, IDamage
 
         if (Hp < 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(gameOverBuildIndex);
         }
         HpUI.text = $"HP:{Hp}";
     }
