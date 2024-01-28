@@ -43,7 +43,7 @@ public class MeleeEnemey : Enemy, IEnemy
             Vector2 lookDirection = playerPos - transform.position;
             float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
             float angle = angleRad * (180 / Mathf.PI);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.Euler(0, 0, 180+angle);
 
             rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
         }
