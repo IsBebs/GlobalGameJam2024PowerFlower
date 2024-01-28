@@ -11,7 +11,8 @@ public class Bullet : MonoBehaviour, IBullet
     Rigidbody2D rigidbody2D;
     [SerializeField]
     int Damage;
-
+    [SerializeField]
+    string soundName;
 
     public void SetNewBulletValues(Vector2 newDirection, Vector3 position)
     {
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour, IBullet
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.Instance.PlaySound(soundName);
         GameObject colliderObject = collision.gameObject;
         IDamage damageInterface = colliderObject.GetComponent<IDamage>();
         if (damageInterface != null)
