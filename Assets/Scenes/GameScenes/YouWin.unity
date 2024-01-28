@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 1398845837}
   - component: {fileID: 1398845836}
   - component: {fileID: 1398845839}
+  - component: {fileID: 1398845840}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -831,7 +832,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1398845837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1398845840}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1398845837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +904,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1398845840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398845834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396a8182447905943acb86ef97a018b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelBuildIndex: 0
 --- !u!4 &1460957401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6833251596459513252, guid: 0cbde248f7be1ae478ae73047eab4fbf, type: 3}

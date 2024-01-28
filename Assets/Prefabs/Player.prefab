@@ -515,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   HpUI: {fileID: 0}
+  gameOverBuildIndex: 3
 --- !u!114 &5160828878250601817
 MonoBehaviour:
   m_ObjectHideFlags: 0
