@@ -20,7 +20,7 @@ public class MeleeEnemey : Enemy, IEnemy
     // Start is called before the first frame update
     void Start()
     {
-        _isAlerted = true;
+        _isAlerted = false;
         Vector3 startLookPos = startLook.transform.position;
         Vector2 lookDirection = transform.position - startLookPos;
         float angleRad = Mathf.Atan2(lookDirection.x, -lookDirection.y);
@@ -46,6 +46,9 @@ public class MeleeEnemey : Enemy, IEnemy
             transform.rotation = Quaternion.Euler(0, 0, 180+angle);
 
             rigidbody2D.AddForce(lookDirection.normalized * force * Time.fixedDeltaTime);
+
+            //testa här
+
         }
 
         Vector2 direction = player.transform.position - gameObject.transform.position;

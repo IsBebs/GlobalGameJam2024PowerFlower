@@ -60,18 +60,18 @@ public class ShootController : MonoBehaviour
             playerAmmo.UpdateAmmoUiWithPieAmmo();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("Pie");
-            currentWeapons = Weapons.Pie;
-            playerAmmo.UpdateAmmoUiWithPieAmmo();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("Confeti");
-            currentWeapons = Weapons.ConfettiGun;
-            playerAmmo.UpdateAmmoUiWithConfettiAmmo();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    Debug.Log("Pie");
+        //    currentWeapons = Weapons.Pie;
+        //    playerAmmo.UpdateAmmoUiWithPieAmmo();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    Debug.Log("Confeti");
+        //    currentWeapons = Weapons.ConfettiGun;
+        //    playerAmmo.UpdateAmmoUiWithConfettiAmmo();
+        //}
 
         if (Input.GetMouseButtonDown(0) && !IsPlayingAnimation)
         {

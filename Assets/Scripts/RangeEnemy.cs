@@ -47,6 +47,7 @@ public class RangeEnemy : Enemy, IEnemy
                 lookDirection = playerPos - transform.position;
                 IBullet bulletInterface = bulletPool.GetNextBulletInPool().GetComponent<IBullet>();
                 bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
+                SoundManager.Instance.PlaySound("EnemyShoot");
                 Debug.Log("Fire");
             }
         }

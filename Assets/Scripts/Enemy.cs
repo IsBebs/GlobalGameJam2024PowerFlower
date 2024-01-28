@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour, IDamage
     {
         GameObject dead = GameObject.Instantiate(deadPreFab);
         dead.transform.position = gameObject.transform.position;
+        SoundManager.Instance.PlaySound("EnemyDead");
         Destroy(this.gameObject, 0.01f);
     }
 
