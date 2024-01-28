@@ -594,10 +594,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1708791557}
     - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: normalBulletPool
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 53198738, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: ConfetiGunBulletPool
       value: 
       objectReference: {fileID: 1017572493}
@@ -608,10 +604,6 @@ PrefabInstance:
     - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_Name
       value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707562897278367236, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3707562897278367241, guid: 0133e7beb7a2f2641b98905217b9c554, type: 3}
       propertyPath: m_RootOrder

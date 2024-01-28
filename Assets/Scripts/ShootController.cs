@@ -17,10 +17,11 @@ public class ShootController : MonoBehaviour
     float soundRadius;
     [SerializeField]
     LayerMask layerMask;
+    [SerializeField]
+    AnimationController animationController;
 
     //Mostly for animation
     GameObject player;
-    public bool animationDone;
     AnimationStates fireAnimation = AnimationStates.inactive;
     enum AnimationStates { inactive, activePie, activeConfetti, donePie, doneConfetti}
     enum Weapons {ConfettiGun,Pie }
@@ -86,17 +87,17 @@ public class ShootController : MonoBehaviour
             }
         }
 
-        if (animationDone)
+        if (animationController.AnimationDone)
         {
             if (fireAnimation == AnimationStates.activeConfetti)
             {
                 fireAnimation = AnimationStates.doneConfetti;
-                animationDone = false;
+                animationController.AnimationDone = false;
             }
             else if (fireAnimation == AnimationStates.activePie)
             {
                 fireAnimation = AnimationStates.donePie;
-                animationDone = false;
+                animationController.AnimationDone = false;
             }
         }
 
@@ -127,6 +128,5 @@ public class ShootController : MonoBehaviour
             bulletInterface.SetNewBulletValues(lookDirection.normalized, transform.position);
             CreateShootSound();
         }
-
     }
 }
